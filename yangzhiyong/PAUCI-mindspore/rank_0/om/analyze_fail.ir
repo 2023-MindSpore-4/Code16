@@ -1,0 +1,317 @@
+# 1.This file shows the parsed IR info when graph evaluating failed to help find the problem.
+# 2.You can search the last `------------------------>` to the node which is inferred failed.
+# 3.Refer to https://www.mindspore.cn/search?inputValue=analyze_fail.ir to get more instructions.
+# ===============================================================================
+
+subgraph attr:
+training : 1
+subgraph instance: mindspore_nn_wrap_cell_wrapper_TrainOneStepCell_construct.14 : 0000028A2FC81790
+# In file C:\Users\Qianxiu\anaconda3\lib\site-packages\mindspore\nn\wrap\cell_wrapper.py:420/    def construct(self, *inputs):/
+subgraph @mindspore_nn_wrap_cell_wrapper_TrainOneStepCell_construct.14(%para1_inputs0, %para2_inputs1, %para3_conv1.weight, %para4_bn1.gamma, %para5_bn1.beta, %para6_layer1.0.conv1.weight, %para7_layer1.0.bn1.gamma, %para8_layer1.0.bn1.beta, %para9_layer1.0.conv2.weight, %para10_layer1.0.bn2.gamma, %para11_layer1.0.bn2.beta, %para12_layer1.0.conv3.weight, %para13_layer1.0.bn3.gamma, %para14_layer1.0.bn3.beta, %para15_layer1.0.down_sample_layer.0.weight, %para16_layer1.0.down_sample_layer.1.gamma, %para17_layer1.0.down_sample_layer.1.beta, %para18_layer1.1.conv1.weight, %para19_layer1.1.bn1.gamma, %para20_layer1.1.bn1.beta, %para21_layer1.1.conv2.weight, %para22_layer1.1.bn2.gamma, %para23_layer1.1.bn2.beta, %para24_layer1.1.conv3.weight, %para25_layer1.1.bn3.gamma, %para26_layer1.1.bn3.beta, %para27_layer1.2.conv1.weight, %para28_layer1.2.bn1.gamma, %para29_layer1.2.bn1.beta, %para30_layer1.2.conv2.weight, %para31_layer1.2.bn2.gamma, %para32_layer1.2.bn2.beta, %para33_layer1.2.conv3.weight, %para34_layer1.2.bn3.gamma, %para35_layer1.2.bn3.beta, %para36_layer2.0.conv1.weight, %para37_layer2.0.bn1.gamma, %para38_layer2.0.bn1.beta, %para39_layer2.0.conv2.weight, %para40_layer2.0.bn2.gamma, %para41_layer2.0.bn2.beta, %para42_layer2.0.conv3.weight, %para43_layer2.0.bn3.gamma, %para44_layer2.0.bn3.beta, %para45_layer2.0.down_sample_layer.0.weight, %para46_layer2.0.down_sample_layer.1.gamma, %para47_layer2.0.down_sample_layer.1.beta, %para48_layer2.1.conv1.weight, %para49_layer2.1.bn1.gamma, %para50_layer2.1.bn1.beta, %para51_layer2.1.conv2.weight, %para52_layer2.1.bn2.gamma, %para53_layer2.1.bn2.beta, %para54_layer2.1.conv3.weight, %para55_layer2.1.bn3.gamma, %para56_layer2.1.bn3.beta, %para57_layer2.2.conv1.weight, %para58_layer2.2.bn1.gamma, %para59_layer2.2.bn1.beta, %para60_layer2.2.conv2.weight, %para61_layer2.2.bn2.gamma, %para62_layer2.2.bn2.beta, %para63_layer2.2.conv3.weight, %para64_layer2.2.bn3.gamma, %para65_layer2.2.bn3.beta, %para66_layer2.3.conv1.weight, %para67_layer2.3.bn1.gamma, %para68_layer2.3.bn1.beta, %para69_layer2.3.conv2.weight, %para70_layer2.3.bn2.gamma, %para71_layer2.3.bn2.beta, %para72_layer2.3.conv3.weight, %para73_layer2.3.bn3.gamma, %para74_layer2.3.bn3.beta, %para75_layer3.0.conv1.weight, %para76_layer3.0.bn1.gamma, %para77_layer3.0.bn1.beta, %para78_layer3.0.conv2.weight, %para79_layer3.0.bn2.gamma, %para80_layer3.0.bn2.beta, %para81_layer3.0.conv3.weight, %para82_layer3.0.bn3.gamma, %para83_layer3.0.bn3.beta, %para84_layer3.0.down_sample_layer.0.weight, %para85_layer3.0.down_sample_layer.1.gamma, %para86_layer3.0.down_sample_layer.1.beta, %para87_layer3.1.conv1.weight, %para88_layer3.1.bn1.gamma, %para89_layer3.1.bn1.beta, %para90_layer3.1.conv2.weight, %para91_layer3.1.bn2.gamma, %para92_layer3.1.bn2.beta, %para93_layer3.1.conv3.weight, %para94_layer3.1.bn3.gamma, %para95_layer3.1.bn3.beta, %para96_layer3.2.conv1.weight, %para97_layer3.2.bn1.gamma, %para98_layer3.2.bn1.beta, %para99_layer3.2.conv2.weight, %para100_layer3.2.bn2.gamma, %para101_layer3.2.bn2.beta, %para102_layer3.2.conv3.weight, %para103_layer3.2.bn3.gamma, %para104_layer3.2.bn3.beta, %para105_layer3.3.conv1.weight, %para106_layer3.3.bn1.gamma, %para107_layer3.3.bn1.beta, %para108_layer3.3.conv2.weight, %para109_layer3.3.bn2.gamma, %para110_layer3.3.bn2.beta, %para111_layer3.3.conv3.weight, %para112_layer3.3.bn3.gamma, %para113_layer3.3.bn3.beta, %para114_layer3.4.conv1.weight, %para115_layer3.4.bn1.gamma, %para116_layer3.4.bn1.beta, %para117_layer3.4.conv2.weight, %para118_layer3.4.bn2.gamma, %para119_layer3.4.bn2.beta, %para120_layer3.4.conv3.weight, %para121_layer3.4.bn3.gamma, %para122_layer3.4.bn3.beta, %para123_layer3.5.conv1.weight, %para124_layer3.5.bn1.gamma, %para125_layer3.5.bn1.beta, %para126_layer3.5.conv2.weight, %para127_layer3.5.bn2.gamma, %para128_layer3.5.bn2.beta, %para129_layer3.5.conv3.weight, %para130_layer3.5.bn3.gamma, %para131_layer3.5.bn3.beta, %para132_layer4.0.conv1.weight, %para133_layer4.0.bn1.gamma, %para134_layer4.0.bn1.beta, %para135_layer4.0.conv2.weight, %para136_layer4.0.bn2.gamma, %para137_layer4.0.bn2.beta, %para138_layer4.0.conv3.weight, %para139_layer4.0.bn3.gamma, %para140_layer4.0.bn3.beta, %para141_layer4.0.down_sample_layer.0.weight, %para142_layer4.0.down_sample_layer.1.gamma, %para143_layer4.0.down_sample_layer.1.beta, %para144_layer4.1.conv1.weight, %para145_layer4.1.bn1.gamma, %para146_layer4.1.bn1.beta, %para147_layer4.1.conv2.weight, %para148_layer4.1.bn2.gamma, %para149_layer4.1.bn2.beta, %para150_layer4.1.conv3.weight, %para151_layer4.1.bn3.gamma, %para152_layer4.1.bn3.beta, %para153_layer4.2.conv1.weight, %para154_layer4.2.bn1.gamma, %para155_layer4.2.bn1.beta, %para156_layer4.2.conv2.weight, %para157_layer4.2.bn2.gamma, %para158_layer4.2.bn2.beta, %para159_layer4.2.conv3.weight, %para160_layer4.2.bn3.gamma, %para161_layer4.2.bn3.beta, %para162_end_point.weight, %para163_end_point.bias, %para164_lam_b, %para165_lam_a, %para166_g, %para167_a, %para168_moments.conv1.weight, %para169_moments.bn1.gamma, %para170_moments.bn1.beta, %para171_moments.layer1.0.conv1.weight, %para172_moments.layer1.0.bn1.gamma, %para173_moments.layer1.0.bn1.beta, %para174_moments.layer1.0.conv2.weight, %para175_moments.layer1.0.bn2.gamma, %para176_moments.layer1.0.bn2.beta, %para177_moments.layer1.0.conv3.weight, %para178_moments.layer1.0.bn3.gamma, %para179_moments.layer1.0.bn3.beta, %para180_moments.layer1.0.down_sample_layer.0.weight, %para181_moments.layer1.0.down_sample_layer.1.gamma, %para182_moments.layer1.0.down_sample_layer.1.beta, %para183_moments.layer1.1.conv1.weight, %para184_moments.layer1.1.bn1.gamma, %para185_moments.layer1.1.bn1.beta, %para186_moments.layer1.1.conv2.weight, %para187_moments.layer1.1.bn2.gamma, %para188_moments.layer1.1.bn2.beta, %para189_moments.layer1.1.conv3.weight, %para190_moments.layer1.1.bn3.gamma, %para191_moments.layer1.1.bn3.beta, %para192_moments.layer1.2.conv1.weight, %para193_moments.layer1.2.bn1.gamma, %para194_moments.layer1.2.bn1.beta, %para195_moments.layer1.2.conv2.weight, %para196_moments.layer1.2.bn2.gamma, %para197_moments.layer1.2.bn2.beta, %para198_moments.layer1.2.conv3.weight, %para199_moments.layer1.2.bn3.gamma, %para200_moments.layer1.2.bn3.beta, %para201_moments.layer2.0.conv1.weight, %para202_moments.layer2.0.bn1.gamma, %para203_moments.layer2.0.bn1.beta, %para204_moments.layer2.0.conv2.weight, %para205_moments.layer2.0.bn2.gamma, %para206_moments.layer2.0.bn2.beta, %para207_moments.layer2.0.conv3.weight, %para208_moments.layer2.0.bn3.gamma, %para209_moments.layer2.0.bn3.beta, %para210_moments.layer2.0.down_sample_layer.0.weight, %para211_moments.layer2.0.down_sample_layer.1.gamma, %para212_moments.layer2.0.down_sample_layer.1.beta, %para213_moments.layer2.1.conv1.weight, %para214_moments.layer2.1.bn1.gamma, %para215_moments.layer2.1.bn1.beta, %para216_moments.layer2.1.conv2.weight, %para217_moments.layer2.1.bn2.gamma, %para218_moments.layer2.1.bn2.beta, %para219_moments.layer2.1.conv3.weight, %para220_moments.layer2.1.bn3.gamma, %para221_moments.layer2.1.bn3.beta, %para222_moments.layer2.2.conv1.weight, %para223_moments.layer2.2.bn1.gamma, %para224_moments.layer2.2.bn1.beta, %para225_moments.layer2.2.conv2.weight, %para226_moments.layer2.2.bn2.gamma, %para227_moments.layer2.2.bn2.beta, %para228_moments.layer2.2.conv3.weight, %para229_moments.layer2.2.bn3.gamma, %para230_moments.layer2.2.bn3.beta, %para231_moments.layer2.3.conv1.weight, %para232_moments.layer2.3.bn1.gamma, %para233_moments.layer2.3.bn1.beta, %para234_moments.layer2.3.conv2.weight, %para235_moments.layer2.3.bn2.gamma, %para236_moments.layer2.3.bn2.beta, %para237_moments.layer2.3.conv3.weight, %para238_moments.layer2.3.bn3.gamma, %para239_moments.layer2.3.bn3.beta, %para240_moments.layer3.0.conv1.weight, %para241_moments.layer3.0.bn1.gamma, %para242_moments.layer3.0.bn1.beta, %para243_moments.layer3.0.conv2.weight, %para244_moments.layer3.0.bn2.gamma, %para245_moments.layer3.0.bn2.beta, %para246_moments.layer3.0.conv3.weight, %para247_moments.layer3.0.bn3.gamma, %para248_moments.layer3.0.bn3.beta, %para249_moments.layer3.0.down_sample_layer.0.weight, %para250_moments.layer3.0.down_sample_layer.1.gamma, %para251_moments.layer3.0.down_sample_layer.1.beta, %para252_moments.layer3.1.conv1.weight, %para253_moments.layer3.1.bn1.gamma, %para254_moments.layer3.1.bn1.beta, %para255_moments.layer3.1.conv2.weight, %para256_moments.layer3.1.bn2.gamma, %para257_moments.layer3.1.bn2.beta, %para258_moments.layer3.1.conv3.weight, %para259_moments.layer3.1.bn3.gamma, %para260_moments.layer3.1.bn3.beta, %para261_moments.layer3.2.conv1.weight, %para262_moments.layer3.2.bn1.gamma, %para263_moments.layer3.2.bn1.beta, %para264_moments.layer3.2.conv2.weight, %para265_moments.layer3.2.bn2.gamma, %para266_moments.layer3.2.bn2.beta, %para267_moments.layer3.2.conv3.weight, %para268_moments.layer3.2.bn3.gamma, %para269_moments.layer3.2.bn3.beta, %para270_moments.layer3.3.conv1.weight, %para271_moments.layer3.3.bn1.gamma, %para272_moments.layer3.3.bn1.beta, %para273_moments.layer3.3.conv2.weight, %para274_moments.layer3.3.bn2.gamma, %para275_moments.layer3.3.bn2.beta, %para276_moments.layer3.3.conv3.weight, %para277_moments.layer3.3.bn3.gamma, %para278_moments.layer3.3.bn3.beta, %para279_moments.layer3.4.conv1.weight, %para280_moments.layer3.4.bn1.gamma, %para281_moments.layer3.4.bn1.beta, %para282_moments.layer3.4.conv2.weight, %para283_moments.layer3.4.bn2.gamma, %para284_moments.layer3.4.bn2.beta, %para285_moments.layer3.4.conv3.weight, %para286_moments.layer3.4.bn3.gamma, %para287_moments.layer3.4.bn3.beta, %para288_moments.layer3.5.conv1.weight, %para289_moments.layer3.5.bn1.gamma, %para290_moments.layer3.5.bn1.beta, %para291_moments.layer3.5.conv2.weight, %para292_moments.layer3.5.bn2.gamma, %para293_moments.layer3.5.bn2.beta, %para294_moments.layer3.5.conv3.weight, %para295_moments.layer3.5.bn3.gamma, %para296_moments.layer3.5.bn3.beta, %para297_moments.layer4.0.conv1.weight, %para298_moments.layer4.0.bn1.gamma, %para299_moments.layer4.0.bn1.beta, %para300_moments.layer4.0.conv2.weight, %para301_moments.layer4.0.bn2.gamma, %para302_moments.layer4.0.bn2.beta, %para303_moments.layer4.0.conv3.weight, %para304_moments.layer4.0.bn3.gamma, %para305_moments.layer4.0.bn3.beta, %para306_moments.layer4.0.down_sample_layer.0.weight, %para307_moments.layer4.0.down_sample_layer.1.gamma, %para308_moments.layer4.0.down_sample_layer.1.beta, %para309_moments.layer4.1.conv1.weight, %para310_moments.layer4.1.bn1.gamma, %para311_moments.layer4.1.bn1.beta, %para312_moments.layer4.1.conv2.weight, %para313_moments.layer4.1.bn2.gamma, %para314_moments.layer4.1.bn2.beta, %para315_moments.layer4.1.conv3.weight, %para316_moments.layer4.1.bn3.gamma, %para317_moments.layer4.1.bn3.beta, %para318_moments.layer4.2.conv1.weight, %para319_moments.layer4.2.bn1.gamma, %para320_moments.layer4.2.bn1.beta, %para321_moments.layer4.2.conv2.weight, %para322_moments.layer4.2.bn2.gamma, %para323_moments.layer4.2.bn2.beta, %para324_moments.layer4.2.conv3.weight, %para325_moments.layer4.2.bn3.gamma, %para326_moments.layer4.2.bn3.beta, %para327_moments.end_point.weight, %para328_moments.end_point.bias, %para329_b, %para330_momentum, %para331_s_n, %para332_s_p, %para333_learning_rate, %para334_global_step, %para335_bn1.moving_mean, %para336_bn1.moving_variance, %para337_layer4.0.bn2.moving_mean, %para338_layer4.0.bn2.moving_variance, %para339_layer4.1.bn2.moving_mean, %para340_layer4.1.bn2.moving_variance, %para341_layer4.2.bn2.moving_mean, %para342_layer4.2.bn2.moving_variance, %para343_layer4.0.bn1.moving_mean, %para344_layer4.0.bn1.moving_variance, %para345_layer4.1.bn1.moving_mean, %para346_layer4.1.bn1.moving_variance, %para347_layer4.2.bn1.moving_mean, %para348_layer4.2.bn1.moving_variance, %para349_layer3.0.bn2.moving_mean, %para350_layer3.0.bn2.moving_variance, %para351_layer3.1.bn2.moving_mean, %para352_layer3.1.bn2.moving_variance, %para353_layer3.2.bn2.moving_mean, %para354_layer3.2.bn2.moving_variance, %para355_layer3.3.bn2.moving_mean, %para356_layer3.3.bn2.moving_variance, %para357_layer3.4.bn2.moving_mean, %para358_layer3.4.bn2.moving_variance, %para359_layer3.5.bn2.moving_mean, %para360_layer3.5.bn2.moving_variance, %para361_layer4.0.bn3.moving_mean, %para362_layer4.0.bn3.moving_variance, %para363_layer4.1.bn3.moving_mean, %para364_layer4.1.bn3.moving_variance, %para365_layer4.2.bn3.moving_mean, %para366_layer4.2.bn3.moving_variance, %para367_layer3.0.bn1.moving_mean, %para368_layer3.0.bn1.moving_variance, %para369_layer3.1.bn1.moving_mean, %para370_layer3.1.bn1.moving_variance, %para371_layer3.2.bn1.moving_mean, %para372_layer3.2.bn1.moving_variance, %para373_layer3.3.bn1.moving_mean, %para374_layer3.3.bn1.moving_variance, %para375_layer3.4.bn1.moving_mean, %para376_layer3.4.bn1.moving_variance, %para377_layer3.5.bn1.moving_mean, %para378_layer3.5.bn1.moving_variance, %para379_layer2.0.bn2.moving_mean, %para380_layer2.0.bn2.moving_variance, %para381_layer2.1.bn2.moving_mean, %para382_layer2.1.bn2.moving_variance, %para383_layer2.2.bn2.moving_mean, %para384_layer2.2.bn2.moving_variance, %para385_layer2.3.bn2.moving_mean, %para386_layer2.3.bn2.moving_variance, %para387_layer3.0.bn3.moving_mean, %para388_layer3.0.bn3.moving_variance, %para389_layer3.1.bn3.moving_mean, %para390_layer3.1.bn3.moving_variance, %para391_layer3.2.bn3.moving_mean, %para392_layer3.2.bn3.moving_variance, %para393_layer3.3.bn3.moving_mean, %para394_layer3.3.bn3.moving_variance, %para395_layer3.4.bn3.moving_mean, %para396_layer3.4.bn3.moving_variance, %para397_layer3.5.bn3.moving_mean, %para398_layer3.5.bn3.moving_variance, %para399_layer2.0.bn1.moving_mean, %para400_layer2.0.bn1.moving_variance, %para401_layer2.1.bn1.moving_mean, %para402_layer2.1.bn1.moving_variance, %para403_layer2.2.bn1.moving_mean, %para404_layer2.2.bn1.moving_variance, %para405_layer2.3.bn1.moving_mean, %para406_layer2.3.bn1.moving_variance, %para407_layer1.0.bn2.moving_mean, %para408_layer1.0.bn2.moving_variance, %para409_layer1.1.bn2.moving_mean, %para410_layer1.1.bn2.moving_variance, %para411_layer1.2.bn2.moving_mean, %para412_layer1.2.bn2.moving_variance, %para413_layer2.0.bn3.moving_mean, %para414_layer2.0.bn3.moving_variance, %para415_layer2.1.bn3.moving_mean, %para416_layer2.1.bn3.moving_variance, %para417_layer2.2.bn3.moving_mean, %para418_layer2.2.bn3.moving_variance, %para419_layer2.3.bn3.moving_mean, %para420_layer2.3.bn3.moving_variance, %para421_layer1.0.bn1.moving_mean, %para422_layer1.0.bn1.moving_variance, %para423_layer1.1.bn1.moving_mean, %para424_layer1.1.bn1.moving_variance, %para425_layer1.2.bn1.moving_mean, %para426_layer1.2.bn1.moving_variance, %para427_layer1.0.bn3.moving_mean, %para428_layer1.0.bn3.moving_variance, %para429_layer1.1.bn3.moving_mean, %para430_layer1.1.bn3.moving_variance, %para431_layer1.2.bn3.moving_mean, %para432_layer1.2.bn3.moving_variance, %para433_layer4.0.down_sample_layer.1.moving_mean, %para434_layer4.0.down_sample_layer.1.moving_variance, %para435_layer3.0.down_sample_layer.1.moving_mean, %para436_layer3.0.down_sample_layer.1.moving_variance, %para437_layer2.0.down_sample_layer.1.moving_mean, %para438_layer2.0.down_sample_layer.1.moving_variance, %para439_layer1.0.down_sample_layer.1.moving_mean, %para440_layer1.0.down_sample_layer.1.moving_variance) {
+  %1([CNode]27) = S-Prim-logical_not(Bool(0))
+      : (<Bool, NoShape>) -> (<Bool, NoShape>)
+      #scope: (Default)
+      # In file C:\Users\Qianxiu\anaconda3\lib\site-packages\mindspore\nn\wrap\cell_wrapper.py:421/        if not self.sense_flag:/
+  %2([CNode]28) = Cond(%1, Bool(0))
+      : (<Bool, NoShape>, <Bool, NoShape>) -> (<Bool, NoShape>)
+      #scope: (Default)
+      # In file C:\Users\Qianxiu\anaconda3\lib\site-packages\mindspore\nn\wrap\cell_wrapper.py:421/        if not self.sense_flag:/
+  %3([CNode]29) = Switch(%2, call @mindspore_nn_wrap_cell_wrapper_TrainOneStepCell_construct.15, call @mindspore_nn_wrap_cell_wrapper_TrainOneStepCell_construct.30)
+      : (<Bool, NoShape>, <Func, NoShape>, <Func, NoShape>) -> (<Func, NoShape>)
+      #scope: (Default)
+      # In file C:\Users\Qianxiu\anaconda3\lib\site-packages\mindspore\nn\wrap\cell_wrapper.py:421/        if not self.sense_flag:/
+
+#------------------------> 0
+  %4([CNode]31) = %3()
+      #scope: (Default)
+      # In file C:\Users\Qianxiu\anaconda3\lib\site-packages\mindspore\nn\wrap\cell_wrapper.py:421/        if not self.sense_flag:/
+  Return(%4)
+      : (<null>)
+      #scope: (Default)
+      # In file C:\Users\Qianxiu\anaconda3\lib\site-packages\mindspore\nn\wrap\cell_wrapper.py:421/        if not self.sense_flag:/
+}
+# Order:
+#   1: @mindspore_nn_wrap_cell_wrapper_TrainOneStepCell_construct.14:[CNode]27{[0]: ValueNode<DoSignaturePrimitive> S-Prim-logical_not, [1]: ValueNode<BoolImm> false}
+#   2: @mindspore_nn_wrap_cell_wrapper_TrainOneStepCell_construct.14:[CNode]28{[0]: ValueNode<Primitive> Cond, [1]: [CNode]27, [2]: ValueNode<BoolImm> false}
+#   3: @mindspore_nn_wrap_cell_wrapper_TrainOneStepCell_construct.14:[CNode]29{[0]: ValueNode<Primitive> Switch, [1]: [CNode]28, [2]: ValueNode<FuncGraph> mindspore_nn_wrap_cell_wrapper_TrainOneStepCell_construct.15, [3]: ValueNode<FuncGraph> mindspore_nn_wrap_cell_wrapper_TrainOneStepCell_construct.30}
+#   4: @mindspore_nn_wrap_cell_wrapper_TrainOneStepCell_construct.14:[CNode]31{[0]: [CNode]29}
+#   5: @mindspore_nn_wrap_cell_wrapper_TrainOneStepCell_construct.14:[CNode]32{[0]: ValueNode<Primitive> Return, [1]: [CNode]31}
+#   6: @mindspore_nn_wrap_cell_wrapper_TrainOneStepCell_construct.14:[CNode]33{[0]: ValueNode<Primitive> resolve, [1]: ValueNode<NameSpace> ClassMember: 'Namespace:mindspore.nn.wrap.cell_wrapper..<TrainOneStepCell::2792301984240>', [2]: ValueNode<Symbol> weights_name}
+
+
+subgraph attr:
+training : 1
+subgraph instance: mindspore_nn_wrap_cell_wrapper_TrainOneStepCell_construct.15 : 0000028A2F5CDA70
+# In file C:\Users\Qianxiu\anaconda3\lib\site-packages\mindspore\nn\wrap\cell_wrapper.py:421/        if not self.sense_flag:/
+subgraph @mindspore_nn_wrap_cell_wrapper_TrainOneStepCell_construct.15 parent: [subgraph @mindspore_nn_wrap_cell_wrapper_TrainOneStepCell_construct.14]() {
+  %1([CNode]34) = $(mindspore_nn_wrap_cell_wrapper_TrainOneStepCell_construct.14):MakeTuple(%para1_inputs0, %para2_inputs1)
+      : (<Tensor[Float32], (24, 3, 224, 224)>, <Tensor[Int32], (24)>) -> (<Tuple[Tensor[Float32],Tensor[Int32]], TupleShape((24, 3, 224, 224), (24))>)
+      #scope: (Default)
+      # In file C:\Users\Qianxiu\anaconda3\lib\site-packages\mindspore\nn\wrap\cell_wrapper.py:420/    def construct(self, *inputs):/
+
+#------------------------> 1
+  %2([CNode]35) = UnpackCall-unpack_call(call @_no_sens_impl.36, %1)
+      : (<Func, NoShape>, <Tuple[Tensor[Float32],Tensor[Int32]], TupleShape((24, 3, 224, 224), (24))>) -> (<null>)
+      #scope: (Default)
+      # In file C:\Users\Qianxiu\anaconda3\lib\site-packages\mindspore\nn\wrap\cell_wrapper.py:422/            return self._no_sens_impl(*inputs)/
+  Return(%2)
+      : (<null>)
+      #scope: (Default)
+      # In file C:\Users\Qianxiu\anaconda3\lib\site-packages\mindspore\nn\wrap\cell_wrapper.py:422/            return self._no_sens_impl(*inputs)/
+}
+# Order:
+#   1: @mindspore_nn_wrap_cell_wrapper_TrainOneStepCell_construct.15:[CNode]35{[0]: ValueNode<UnpackCall> MetaFuncGraph-unpack_call.37, [1]: ValueNode<FuncGraph> _no_sens_impl.36, [2]: [CNode]34}
+#   2: @mindspore_nn_wrap_cell_wrapper_TrainOneStepCell_construct.15:[CNode]38{[0]: ValueNode<Primitive> Return, [1]: [CNode]35}
+
+
+subgraph attr:
+core : 1
+subgraph instance: UnpackCall.16 : 0000028A2F5D7F20
+# In file C:\Users\Qianxiu\anaconda3\lib\site-packages\mindspore\nn\wrap\cell_wrapper.py:422/            return self._no_sens_impl(*inputs)/
+subgraph @UnpackCall.16(%para441_, %para442_) {
+  %1([CNode]35) = TupleGetItem(%para442_18, I64(0))
+      : (<Tuple[Tensor[Float32],Tensor[Int32]], TupleShape((24, 3, 224, 224), (24))>, <Int64, NoShape>) -> (<Tensor[Float32], (24, 3, 224, 224)>)
+      #scope: (Default)
+      # In file C:\Users\Qianxiu\anaconda3\lib\site-packages\mindspore\nn\wrap\cell_wrapper.py:422/            return self._no_sens_impl(*inputs)/
+  %2([CNode]35) = TupleGetItem(%para442_18, I64(1))
+      : (<Tuple[Tensor[Float32],Tensor[Int32]], TupleShape((24, 3, 224, 224), (24))>, <Int64, NoShape>) -> (<Tensor[Int32], (24)>)
+      #scope: (Default)
+      # In file C:\Users\Qianxiu\anaconda3\lib\site-packages\mindspore\nn\wrap\cell_wrapper.py:422/            return self._no_sens_impl(*inputs)/
+
+#------------------------> 2
+  %3([CNode]35) = %para441_17(%1, %2)
+      : (<Tensor[Float32], (24, 3, 224, 224)>, <Tensor[Int32], (24)>) -> (<null>)
+      #scope: (Default)
+      # In file C:\Users\Qianxiu\anaconda3\lib\site-packages\mindspore\nn\wrap\cell_wrapper.py:422/            return self._no_sens_impl(*inputs)/
+  Return(%3)
+      : (<null>)
+      #scope: (Default)
+      # In file C:\Users\Qianxiu\anaconda3\lib\site-packages\mindspore\nn\wrap\cell_wrapper.py:422/            return self._no_sens_impl(*inputs)/
+}
+# Order:
+#   1: @UnpackCall.16:[CNode]35{[0]: 17, [1]: [CNode]35, [2]: [CNode]35}
+#   2: @UnpackCall.16:[CNode]35{[0]: ValueNode<Primitive> Return, [1]: [CNode]35}
+
+
+subgraph attr:
+training : 1
+subgraph instance: _no_sens_impl.19 : 0000028A2F5DAEF0
+# In file C:\Users\Qianxiu\anaconda3\lib\site-packages\mindspore\nn\wrap\cell_wrapper.py:435/    def _no_sens_impl(self, *inputs):/
+subgraph @_no_sens_impl.19 parent: [subgraph @mindspore_nn_wrap_cell_wrapper_TrainOneStepCell_construct.14](%para443_inputs0, %para444_inputs1) {
+  %1([CNode]39) = Cond(Bool(0), Bool(0))
+      : (<Bool, NoShape>, <Bool, NoShape>) -> (<Bool, NoShape>)
+      #scope: (Default)
+      # In file C:\Users\Qianxiu\anaconda3\lib\site-packages\mindspore\nn\wrap\cell_wrapper.py:441/        if self.return_grad:/
+  %2([CNode]40) = Switch(%1, call @_no_sens_impl.41, call @_no_sens_impl.20)
+      : (<Bool, NoShape>, <Func, NoShape>, <Func, NoShape>) -> (<Func, NoShape>)
+      #scope: (Default)
+      # In file C:\Users\Qianxiu\anaconda3\lib\site-packages\mindspore\nn\wrap\cell_wrapper.py:441/        if self.return_grad:/
+
+#------------------------> 3
+  %3([CNode]42) = %2()
+      #scope: (Default)
+      # In file C:\Users\Qianxiu\anaconda3\lib\site-packages\mindspore\nn\wrap\cell_wrapper.py:441/        if self.return_grad:/
+  Return(%3)
+      : (<null>)
+      #scope: (Default)
+      # In file C:\Users\Qianxiu\anaconda3\lib\site-packages\mindspore\nn\wrap\cell_wrapper.py:441/        if self.return_grad:/
+}
+# Order:
+#   1: @_no_sens_impl.19:loss{[0]: ValueNode<UnpackCall> MetaFuncGraph-unpack_call.43, [1]: ValueNode<FuncGraph> mindspore_nn_wrap_cell_wrapper_WithLossCell_construct.25, [2]: [CNode]44}
+#   2: @_no_sens_impl.19:grads{[0]: ValueNode<UnpackGraphPrimitive> UnpackGraph, [1]: ValueNode<FuncGraph> mindspore_nn_wrap_cell_wrapper_WithLossCell_construct.25, [2]: [CNode]44}
+#   3: @_no_sens_impl.19:grads{[0]: ValueNode<DoSignaturePrimitive> S-Prim-grad, [1]: grads, [2]: [CNode]45}
+#   4: @_no_sens_impl.19:grads{[0]: ValueNode<UnpackCall> MetaFuncGraph-unpack_call.46, [1]: grads, [2]: [CNode]44}
+#   5: @_no_sens_impl.19:grads{[0]: ValueNode<FuncGraph> mindspore_nn_layer_basic_Identity_construct.47, [1]: grads}
+#   6: @_no_sens_impl.19:[CNode]48{[0]: ValueNode<FuncGraph> mindspore_nn_optim_momentum_Momentum_construct.49, [1]: grads}
+#   7: @_no_sens_impl.19:loss{[0]: ValueNode<DoSignaturePrimitive> S-Prim-Depend, [1]: loss, [2]: [CNode]48}
+#   8: @_no_sens_impl.19:[CNode]39{[0]: ValueNode<Primitive> Cond, [1]: ValueNode<BoolImm> false, [2]: ValueNode<BoolImm> false}
+#   9: @_no_sens_impl.19:[CNode]50{[0]: ValueNode<Primitive> resolve, [1]: ValueNode<NameSpace> ClassMember: 'Namespace:mindspore.nn.wrap.cell_wrapper..<TrainOneStepCell::2792301984240>', [2]: ValueNode<Symbol> weights_name}
+#  10: @_no_sens_impl.19:[CNode]40{[0]: ValueNode<Primitive> Switch, [1]: [CNode]39, [2]: ValueNode<FuncGraph> _no_sens_impl.41, [3]: ValueNode<FuncGraph> _no_sens_impl.20}
+#  11: @_no_sens_impl.19:[CNode]42{[0]: [CNode]40}
+#  12: @_no_sens_impl.19:[CNode]51{[0]: ValueNode<Primitive> Return, [1]: [CNode]42}
+
+
+subgraph attr:
+training : 1
+subgraph instance: _no_sens_impl.20 : 0000028A2F5DB990
+# In file C:\Users\Qianxiu\anaconda3\lib\site-packages\mindspore\nn\wrap\cell_wrapper.py:441/        if self.return_grad:/
+subgraph @_no_sens_impl.20 parent: [subgraph @_no_sens_impl.19]() {
+
+#------------------------> 4
+  %1([CNode]52) = call @_no_sens_impl.21()
+      #scope: (Default)
+      # In file C:\Users\Qianxiu\anaconda3\lib\site-packages\mindspore\nn\wrap\cell_wrapper.py:441/        if self.return_grad:/
+  Return(%1)
+      : (<null>)
+      #scope: (Default)
+      # In file C:\Users\Qianxiu\anaconda3\lib\site-packages\mindspore\nn\wrap\cell_wrapper.py:441/        if self.return_grad:/
+}
+# Order:
+#   1: @_no_sens_impl.20:[CNode]52{[0]: ValueNode<FuncGraph> _no_sens_impl.21}
+#   2: @_no_sens_impl.20:[CNode]53{[0]: ValueNode<Primitive> Return, [1]: [CNode]52}
+
+
+subgraph attr:
+after_block : 1
+training : 1
+subgraph instance: _no_sens_impl.21 : 0000028A2F5DEEB0
+# In file C:\Users\Qianxiu\anaconda3\lib\site-packages\mindspore\nn\wrap\cell_wrapper.py:441/        if self.return_grad:/
+subgraph @_no_sens_impl.21 parent: [subgraph @_no_sens_impl.19]() {
+  %1([CNode]44) = $(_no_sens_impl.19):MakeTuple(%para443_inputs0, %para444_inputs1)
+      : (<Tensor[Float32], (24, 3, 224, 224)>, <Tensor[Int32], (24)>) -> (<Tuple[Tensor[Float32],Tensor[Int32]], TupleShape((24, 3, 224, 224), (24))>)
+      #scope: (Default)
+      # In file C:\Users\Qianxiu\anaconda3\lib\site-packages\mindspore\nn\wrap\cell_wrapper.py:435/    def _no_sens_impl(self, *inputs):/
+
+#------------------------> 5
+  %2(loss) = $(_no_sens_impl.19):UnpackCall-unpack_call(call @mindspore_nn_wrap_cell_wrapper_WithLossCell_construct.25, %1)
+      : (<Func, NoShape>, <Tuple[Tensor[Float32],Tensor[Int32]], TupleShape((24, 3, 224, 224), (24))>) -> (<null>)
+      #scope: (Default)
+      # In file C:\Users\Qianxiu\anaconda3\lib\site-packages\mindspore\nn\wrap\cell_wrapper.py:437/        loss = self.network(*inputs)/
+  %3(grads) = $(_no_sens_impl.19):UnpackGraph(call @mindspore_nn_wrap_cell_wrapper_WithLossCell_construct.25, %1)
+      : (<null>, <Tuple[Tensor[Float32],Tensor[Int32]], TupleShape((24, 3, 224, 224), (24))>) -> (<null>)
+      #scope: (Default)
+      # In file C:\Users\Qianxiu\anaconda3\lib\site-packages\mindspore\nn\wrap\cell_wrapper.py:438/        grads = self.grad_no_sens(self.network, self.weights)(*inputs)/
+  %4([CNode]45) = $(_no_sens_impl.19):MakeTuple(%para3_conv1.weight, %para4_bn1.gamma, %para5_bn1.beta, %para6_layer1.0.conv1.weight, %para7_layer1.0.bn1.gamma, %para8_layer1.0.bn1.beta, %para9_layer1.0.conv2.weight, %para10_layer1.0.bn2.gamma, %para11_layer1.0.bn2.beta, %para12_layer1.0.conv3.weight, %para13_layer1.0.bn3.gamma, %para14_layer1.0.bn3.beta, %para15_layer1.0.down_sample_layer.0.weight, %para16_layer1.0.down_sample_layer.1.gamma, %para17_layer1.0.down_sample_layer.1.beta, %para18_layer1.1.conv1.weight, %para19_layer1.1.bn1.gamma, %para20_layer1.1.bn1.beta, %para21_layer1.1.conv2.weight, %para22_layer1.1.bn2.gamma, %para23_layer1.1.bn2.beta, %para24_layer1.1.conv3.weight, %para25_layer1.1.bn3.gamma, %para26_layer1.1.bn3.beta, %para27_layer1.2.conv1.weight, %para28_layer1.2.bn1.gamma, %para29_layer1.2.bn1.beta, %para30_layer1.2.conv2.weight, %para31_layer1.2.bn2.gamma, %para32_layer1.2.bn2.beta, %para33_layer1.2.conv3.weight, %para34_layer1.2.bn3.gamma, %para35_layer1.2.bn3.beta, %para36_layer2.0.conv1.weight, %para37_layer2.0.bn1.gamma, %para38_layer2.0.bn1.beta, %para39_layer2.0.conv2.weight, %para40_layer2.0.bn2.gamma, %para41_layer2.0.bn2.beta, %para42_layer2.0.conv3.weight, %para43_layer2.0.bn3.gamma, %para44_layer2.0.bn3.beta, %para45_layer2.0.down_sample_layer.0.weight, %para46_layer2.0.down_sample_layer.1.gamma, %para47_layer2.0.down_sample_layer.1.beta, %para48_layer2.1.conv1.weight, %para49_layer2.1.bn1.gamma, %para50_layer2.1.bn1.beta, %para51_layer2.1.conv2.weight, %para52_layer2.1.bn2.gamma, %para53_layer2.1.bn2.beta, %para54_layer2.1.conv3.weight, %para55_layer2.1.bn3.gamma, %para56_layer2.1.bn3.beta, %para57_layer2.2.conv1.weight, %para58_layer2.2.bn1.gamma, %para59_layer2.2.bn1.beta, %para60_layer2.2.conv2.weight, %para61_layer2.2.bn2.gamma, %para62_layer2.2.bn2.beta, %para63_layer2.2.conv3.weight, %para64_layer2.2.bn3.gamma, %para65_layer2.2.bn3.beta, %para66_layer2.3.conv1.weight, %para67_layer2.3.bn1.gamma, %para68_layer2.3.bn1.beta, %para69_layer2.3.conv2.weight, %para70_layer2.3.bn2.gamma, %para71_layer2.3.bn2.beta, %para72_layer2.3.conv3.weight, %para73_layer2.3.bn3.gamma, %para74_layer2.3.bn3.beta, %para75_layer3.0.conv1.weight, %para76_layer3.0.bn1.gamma, %para77_layer3.0.bn1.beta, %para78_layer3.0.conv2.weight, %para79_layer3.0.bn2.gamma, %para80_layer3.0.bn2.beta, %para81_layer3.0.conv3.weight, %para82_layer3.0.bn3.gamma, %para83_layer3.0.bn3.beta, %para84_layer3.0.down_sample_layer.0.weight, %para85_layer3.0.down_sample_layer.1.gamma, %para86_layer3.0.down_sample_layer.1.beta, %para87_layer3.1.conv1.weight, %para88_layer3.1.bn1.gamma, %para89_layer3.1.bn1.beta, %para90_layer3.1.conv2.weight, %para91_layer3.1.bn2.gamma, %para92_layer3.1.bn2.beta, %para93_layer3.1.conv3.weight, %para94_layer3.1.bn3.gamma, %para95_layer3.1.bn3.beta, %para96_layer3.2.conv1.weight, %para97_layer3.2.bn1.gamma, %para98_layer3.2.bn1.beta, %para99_layer3.2.conv2.weight, %para100_layer3.2.bn2.gamma, %para101_layer3.2.bn2.beta, %para102_layer3.2.conv3.weight, %para103_layer3.2.bn3.gamma, %para104_layer3.2.bn3.beta, %para105_layer3.3.conv1.weight, %para106_layer3.3.bn1.gamma, %para107_layer3.3.bn1.beta, %para108_layer3.3.conv2.weight, %para109_layer3.3.bn2.gamma, %para110_layer3.3.bn2.beta, %para111_layer3.3.conv3.weight, %para112_layer3.3.bn3.gamma, %para113_layer3.3.bn3.beta, %para114_layer3.4.conv1.weight, %para115_layer3.4.bn1.gamma, %para116_layer3.4.bn1.beta, %para117_layer3.4.conv2.weight, %para118_layer3.4.bn2.gamma, %para119_layer3.4.bn2.beta, %para120_layer3.4.conv3.weight, %para121_layer3.4.bn3.gamma, %para122_layer3.4.bn3.beta, %para123_layer3.5.conv1.weight, %para124_layer3.5.bn1.gamma, %para125_layer3.5.bn1.beta, %para126_layer3.5.conv2.weight, %para127_layer3.5.bn2.gamma, %para128_layer3.5.bn2.beta, %para129_layer3.5.conv3.weight, %para130_layer3.5.bn3.gamma, %para131_layer3.5.bn3.beta, %para132_layer4.0.conv1.weight, %para133_layer4.0.bn1.gamma, %para134_layer4.0.bn1.beta, %para135_layer4.0.conv2.weight, %para136_layer4.0.bn2.gamma, %para137_layer4.0.bn2.beta, %para138_layer4.0.conv3.weight, %para139_layer4.0.bn3.gamma, %para140_layer4.0.bn3.beta, %para141_layer4.0.down_sample_layer.0.weight, %para142_layer4.0.down_sample_layer.1.gamma, %para143_layer4.0.down_sample_layer.1.beta, %para144_layer4.1.conv1.weight, %para145_layer4.1.bn1.gamma, %para146_layer4.1.bn1.beta, %para147_layer4.1.conv2.weight, %para148_layer4.1.bn2.gamma, %para149_layer4.1.bn2.beta, %para150_layer4.1.conv3.weight, %para151_layer4.1.bn3.gamma, %para152_layer4.1.bn3.beta, %para153_layer4.2.conv1.weight, %para154_layer4.2.bn1.gamma, %para155_layer4.2.bn1.beta, %para156_layer4.2.conv2.weight, %para157_layer4.2.bn2.gamma, %para158_layer4.2.bn2.beta, %para159_layer4.2.conv3.weight, %para160_layer4.2.bn3.gamma, %para161_layer4.2.bn3.beta, %para162_end_point.weight, %para163_end_point.bias)
+      : (<Ref[Tensor[Float32]], (64, 3, 7, 7)>, <Ref[Tensor[Float32]], (64)>, <Ref[Tensor[Float32]], (64)>, <Ref[Tensor[Float32]], (64, 64, 1, 1)>, <Ref[Tensor[Float32]], (64)>, <Ref[Tensor[Float32]], (64)>, <Ref[Tensor[Float32]], (64, 64, 3, 3)>, <Ref[Tensor[Float32]], (64)>, <Ref[Tensor[Float32]], (64)>, <Ref[Tensor[Float32]], (256, 64, 1, 1)>, <Ref[Tensor[Float32]], (256)>, <Ref[Tensor[Float32]], (256)>, <Ref[Tensor[Float32]], (256, 64, 1, 1)>, <Ref[Tensor[Float32]], (256)>, <Ref[Tensor[Float32]], (256)>, <Ref[Tensor[Float32]], (64, 256, 1, 1)>, <Ref[Tensor[Float32]], (64)>, <Ref[Tensor[Float32]], (64)>, <Ref[Tensor[Float32]], (64, 64, 3, 3)>, <Ref[Tensor[Float32]], (64)>, <Ref[Tensor[Float32]], (64)>, <Ref[Tensor[Float32]], (256, 64, 1, 1)>, <Ref[Tensor[Float32]], (256)>, <Ref[Tensor[Float32]], (256)>, <Ref[Tensor[Float32]], (64, 256, 1, 1)>, <Ref[Tensor[Float32]], (64)>, <Ref[Tensor[Float32]], (64)>, <Ref[Tensor[Float32]], (64, 64, 3, 3)>, <Ref[Tensor[Float32]], (64)>, <Ref[Tensor[Float32]], (64)>, <Ref[Tensor[Float32]], (256, 64, 1, 1)>, <Ref[Tensor[Float32]], (256)>, <Ref[Tensor[Float32]], (256)>, <Ref[Tensor[Float32]], (128, 256, 1, 1)>, <Ref[Tensor[Float32]], (128)>, <Ref[Tensor[Float32]], (128)>, <Ref[Tensor[Float32]], (128, 128, 3, 3)>, <Ref[Tensor[Float32]], (128)>, <Ref[Tensor[Float32]], (128)>, <Ref[Tensor[Float32]], (512, 128, 1, 1)>, <Ref[Tensor[Float32]], (512)>, <Ref[Tensor[Float32]], (512)>, <Ref[Tensor[Float32]], (512, 256, 1, 1)>, <Ref[Tensor[Float32]], (512)>, <Ref[Tensor[Float32]], (512)>, <Ref[Tensor[Float32]], (128, 512, 1, 1)>, <Ref[Tensor[Float32]], (128)>, <Ref[Tensor[Float32]], (128)>, <Ref[Tensor[Float32]], (128, 128, 3, 3)>, <Ref[Tensor[Float32]], (128)>, <Ref[Tensor[Float32]], (128)>, <Ref[Tensor[Float32]], (512, 128, 1, 1)>, <Ref[Tensor[Float32]], (512)>, <Ref[Tensor[Float32]], (512)>, <Ref[Tensor[Float32]], (128, 512, 1, 1)>, <Ref[Tensor[Float32]], (128)>, <Ref[Tensor[Float32]], (128)>, <Ref[Tensor[Float32]], (128, 128, 3, 3)>, <Ref[Tensor[Float32]], (128)>, <Ref[Tensor[Float32]], (128)>, <Ref[Tensor[Float32]], (512, 128, 1, 1)>, <Ref[Tensor[Float32]], (512)>, <Ref[Tensor[Float32]], (512)>, <Ref[Tensor[Float32]], (128, 512, 1, 1)>, <Ref[Tensor[Float32]], (128)>, <Ref[Tensor[Float32]], (128)>, <Ref[Tensor[Float32]], (128, 128, 3, 3)>, <Ref[Tensor[Float32]], (128)>, <Ref[Tensor[Float32]], (128)>, <Ref[Tensor[Float32]], (512, 128, 1, 1)>, <Ref[Tensor[Float32]], (512)>, <Ref[Tensor[Float32]], (512)>, <Ref[Tensor[Float32]], (256, 512, 1, 1)>, <Ref[Tensor[Float32]], (256)>, <Ref[Tensor[Float32]], (256)>, <Ref[Tensor[Float32]], (256, 256, 3, 3)>, <Ref[Tensor[Float32]], (256)>, <Ref[Tensor[Float32]], (256)>, <Ref[Tensor[Float32]], (1024, 256, 1, 1)>, <Ref[Tensor[Float32]], (1024)>, <Ref[Tensor[Float32]], (1024)>, <Ref[Tensor[Float32]], (1024, 512, 1, 1)>, <Ref[Tensor[Float32]], (1024)>, <Ref[Tensor[Float32]], (1024)>, <Ref[Tensor[Float32]], (256, 1024, 1, 1)>, <Ref[Tensor[Float32]], (256)>, <Ref[Tensor[Float32]], (256)>, <Ref[Tensor[Float32]], (256, 256, 3, 3)>, <Ref[Tensor[Float32]], (256)>, <Ref[Tensor[Float32]], (256)>, <Ref[Tensor[Float32]], (1024, 256, 1, 1)>, <Ref[Tensor[Float32]], (1024)>, <Ref[Tensor[Float32]], (1024)>, <Ref[Tensor[Float32]], (256, 1024, 1, 1)>, <Ref[Tensor[Float32]], (256)>, <Ref[Tensor[Float32]], (256)>, <Ref[Tensor[Float32]], (256, 256, 3, 3)>, <Ref[Tensor[Float32]], (256)>, <Ref[Tensor[Float32]], (256)>, <Ref[Tensor[Float32]], (1024, 256, 1, 1)>, <Ref[Tensor[Float32]], (1024)>, <Ref[Tensor[Float32]], (1024)>, <Ref[Tensor[Float32]], (256, 1024, 1, 1)>, <Ref[Tensor[Float32]], (256)>, <Ref[Tensor[Float32]], (256)>, <Ref[Tensor[Float32]], (256, 256, 3, 3)>, <Ref[Tensor[Float32]], (256)>, <Ref[Tensor[Float32]], (256)>, <Ref[Tensor[Float32]], (1024, 256, 1, 1)>, <Ref[Tensor[Float32]], (1024)>, <Ref[Tensor[Float32]], (1024)>, <Ref[Tensor[Float32]], (256, 1024, 1, 1)>, <Ref[Tensor[Float32]], (256)>, <Ref[Tensor[Float32]], (256)>, <Ref[Tensor[Float32]], (256, 256, 3, 3)>, <Ref[Tensor[Float32]], (256)>, <Ref[Tensor[Float32]], (256)>, <Ref[Tensor[Float32]], (1024, 256, 1, 1)>, <Ref[Tensor[Float32]], (1024)>, <Ref[Tensor[Float32]], (1024)>, <Ref[Tensor[Float32]], (256, 1024, 1, 1)>, <Ref[Tensor[Float32]], (256)>, <Ref[Tensor[Float32]], (256)>, <Ref[Tensor[Float32]], (256, 256, 3, 3)>, <Ref[Tensor[Float32]], (256)>, <Ref[Tensor[Float32]], (256)>, <Ref[Tensor[Float32]], (1024, 256, 1, 1)>, <Ref[Tensor[Float32]], (1024)>, <Ref[Tensor[Float32]], (1024)>, <Ref[Tensor[Float32]], (512, 1024, 1, 1)>, <Ref[Tensor[Float32]], (512)>, <Ref[Tensor[Float32]], (512)>, <Ref[Tensor[Float32]], (512, 512, 3, 3)>, <Ref[Tensor[Float32]], (512)>, <Ref[Tensor[Float32]], (512)>, <Ref[Tensor[Float32]], (2048, 512, 1, 1)>, <Ref[Tensor[Float32]], (2048)>, <Ref[Tensor[Float32]], (2048)>, <Ref[Tensor[Float32]], (2048, 1024, 1, 1)>, <Ref[Tensor[Float32]], (2048)>, <Ref[Tensor[Float32]], (2048)>, <Ref[Tensor[Float32]], (512, 2048, 1, 1)>, <Ref[Tensor[Float32]], (512)>, <Ref[Tensor[Float32]], (512)>, <Ref[Tensor[Float32]], (512, 512, 3, 3)>, <Ref[Tensor[Float32]], (512)>, <Ref[Tensor[Float32]], (512)>, <Ref[Tensor[Float32]], (2048, 512, 1, 1)>, <Ref[Tensor[Float32]], (2048)>, <Ref[Tensor[Float32]], (2048)>, <Ref[Tensor[Float32]], (512, 2048, 1, 1)>, <Ref[Tensor[Float32]], (512)>, <Ref[Tensor[Float32]], (512)>, <Ref[Tensor[Float32]], (512, 512, 3, 3)>, <Ref[Tensor[Float32]], (512)>, <Ref[Tensor[Float32]], (512)>, <Ref[Tensor[Float32]], (2048, 512, 1, 1)>, <Ref[Tensor[Float32]], (2048)>, <Ref[Tensor[Float32]], (2048)>, <Ref[Tensor[Float32]], (2, 2048)>, <Ref[Tensor[Float32]], (2)>) -> (<null>)
+      #scope: (Default)
+      # In file C:\Users\Qianxiu\anaconda3\lib\site-packages\mindspore\nn\wrap\cell_wrapper.py:438/        grads = self.grad_no_sens(self.network, self.weights)(*inputs)/
+  %5(grads) = $(_no_sens_impl.19):S-Prim-grad(%3, %4)
+      : (<null>, <null>) -> (<null>)
+      #scope: (Default)
+      # In file C:\Users\Qianxiu\anaconda3\lib\site-packages\mindspore\nn\wrap\cell_wrapper.py:438/        grads = self.grad_no_sens(self.network, self.weights)(*inputs)/
+  %6(grads) = $(_no_sens_impl.19):UnpackCall-unpack_call(%5, %1)
+      : (<null>, <Tuple[Tensor[Float32],Tensor[Int32]], TupleShape((24, 3, 224, 224), (24))>) -> (<null>)
+      #scope: (Default)
+      # In file C:\Users\Qianxiu\anaconda3\lib\site-packages\mindspore\nn\wrap\cell_wrapper.py:438/        grads = self.grad_no_sens(self.network, self.weights)(*inputs)/
+  %7(grads) = $(_no_sens_impl.19):call @mindspore_nn_layer_basic_Identity_construct.47(%6)
+      : (<null>) -> (<null>)
+      #scope: (Default)
+      # In file C:\Users\Qianxiu\anaconda3\lib\site-packages\mindspore\nn\wrap\cell_wrapper.py:439/        grads = self.grad_reducer(grads)/
+  %8([CNode]48) = $(_no_sens_impl.19):call @mindspore_nn_optim_momentum_Momentum_construct.49(%7)
+      : (<null>) -> (<null>)
+      #scope: (Default)
+      # In file C:\Users\Qianxiu\anaconda3\lib\site-packages\mindspore\nn\wrap\cell_wrapper.py:440/        loss = F.depend(loss, self.optimizer(grads))/
+  %9(loss) = $(_no_sens_impl.19):S-Prim-Depend[side_effect_propagate: I64(1)](%2, %8)
+      : (<null>, <null>) -> (<null>)
+      #scope: (Default)
+      # In file C:\Users\Qianxiu\anaconda3\lib\site-packages\mindspore\nn\wrap\cell_wrapper.py:440/        loss = F.depend(loss, self.optimizer(grads))/
+  Return(%9)
+      : (<null>)
+      #scope: (Default)
+      # In file C:\Users\Qianxiu\anaconda3\lib\site-packages\mindspore\nn\wrap\cell_wrapper.py:446/        return loss/
+}
+# Order:
+#   1: @_no_sens_impl.21:[CNode]54{[0]: ValueNode<Primitive> Return, [1]: loss}
+
+
+subgraph attr:
+core : 1
+subgraph instance: UnpackCall.22 : 0000028A3311B970
+# In file C:\Users\Qianxiu\anaconda3\lib\site-packages\mindspore\nn\wrap\cell_wrapper.py:437/        loss = self.network(*inputs)/
+subgraph @UnpackCall.22(%para445_, %para446_) {
+  %1(loss) = TupleGetItem(%para446_24, I64(0))
+      : (<Tuple[Tensor[Float32],Tensor[Int32]], TupleShape((24, 3, 224, 224), (24))>, <Int64, NoShape>) -> (<Tensor[Float32], (24, 3, 224, 224)>)
+      #scope: (Default)
+      # In file C:\Users\Qianxiu\anaconda3\lib\site-packages\mindspore\nn\wrap\cell_wrapper.py:437/        loss = self.network(*inputs)/
+  %2(loss) = TupleGetItem(%para446_24, I64(1))
+      : (<Tuple[Tensor[Float32],Tensor[Int32]], TupleShape((24, 3, 224, 224), (24))>, <Int64, NoShape>) -> (<Tensor[Int32], (24)>)
+      #scope: (Default)
+      # In file C:\Users\Qianxiu\anaconda3\lib\site-packages\mindspore\nn\wrap\cell_wrapper.py:437/        loss = self.network(*inputs)/
+
+#------------------------> 6
+  %3(loss) = %para445_23(%1, %2)
+      : (<Tensor[Float32], (24, 3, 224, 224)>, <Tensor[Int32], (24)>) -> (<null>)
+      #scope: (Default)
+      # In file C:\Users\Qianxiu\anaconda3\lib\site-packages\mindspore\nn\wrap\cell_wrapper.py:437/        loss = self.network(*inputs)/
+  Return(%3)
+      : (<null>)
+      #scope: (Default)
+      # In file C:\Users\Qianxiu\anaconda3\lib\site-packages\mindspore\nn\wrap\cell_wrapper.py:437/        loss = self.network(*inputs)/
+}
+# Order:
+#   1: @UnpackCall.22:loss{[0]: 23, [1]: loss, [2]: loss}
+#   2: @UnpackCall.22:loss{[0]: ValueNode<Primitive> Return, [1]: loss}
+
+
+subgraph attr:
+training : 1
+subgraph instance: mindspore_nn_wrap_cell_wrapper_WithLossCell_construct.25 : 0000028A2F5FDCC0
+# In file C:\Users\Qianxiu\anaconda3\lib\site-packages\mindspore\nn\wrap\cell_wrapper.py:121/    def construct(self, data, label):/
+subgraph @mindspore_nn_wrap_cell_wrapper_WithLossCell_construct.25 parent: [subgraph @mindspore_nn_wrap_cell_wrapper_TrainOneStepCell_construct.14](%para447_data, %para448_label) {
+  %1(out) = call @resnet_ResNet_construct.55(%para447_data)
+      : (<Tensor[Float32], (24, 3, 224, 224)>) -> (<Tensor[Float32], (24, 2)>)
+      #scope: (Default/network-WithLossCell)
+      # In file C:\Users\Qianxiu\anaconda3\lib\site-packages\mindspore\nn\wrap\cell_wrapper.py:122/        out = self._backbone(data)/
+
+#------------------------> 7
+  %2([CNode]56) = call @__main___SPAUCILoss_construct.26(%1, %para448_label)
+      : (<Tensor[Float32], (24, 2)>, <Tensor[Int32], (24)>) -> (<null>)
+      #scope: (Default/network-WithLossCell)
+      # In file C:\Users\Qianxiu\anaconda3\lib\site-packages\mindspore\nn\wrap\cell_wrapper.py:123/        return self._loss_fn(out, label)/
+  Return(%2)
+      : (<null>)
+      #scope: (Default/network-WithLossCell)
+      # In file C:\Users\Qianxiu\anaconda3\lib\site-packages\mindspore\nn\wrap\cell_wrapper.py:123/        return self._loss_fn(out, label)/
+}
+# Order:
+#   1: @mindspore_nn_wrap_cell_wrapper_WithLossCell_construct.25:out{[0]: ValueNode<FuncGraph> resnet_ResNet_construct.55, [1]: data}
+#   2: @mindspore_nn_wrap_cell_wrapper_WithLossCell_construct.25:[CNode]56{[0]: ValueNode<FuncGraph> __main___SPAUCILoss_construct.26, [1]: out, [2]: label}
+#   3: @mindspore_nn_wrap_cell_wrapper_WithLossCell_construct.25:[CNode]57{[0]: ValueNode<Primitive> Return, [1]: [CNode]56}
+
+
+subgraph attr:
+training : 1
+subgraph instance: __main___SPAUCILoss_construct.26 : 0000028A304B2FC0
+# In file c:/Users/Qianxiu/Desktop/mindspore_resnet50_husky_labrador-master/train.py:190/    def construct(self, pred, target):/
+subgraph @__main___SPAUCILoss_construct.26 parent: [subgraph @mindspore_nn_wrap_cell_wrapper_TrainOneStepCell_construct.14](%para449_pred, %para450_target) {
+
+#------------------------> 8
+  %1([CNode]58) = resolve(ClassMember, na)
+      : (<External, NoShape>, <External, NoShape>) -> (<null>)
+      #scope: (Default/network-WithLossCell/_loss_fn-SPAUCILoss)
+      # In file c:/Users/Qianxiu/Desktop/mindspore_resnet50_husky_labrador-master/train.py:194/        if self.na == 1:/
+  %2([CNode]59) = S-Prim-equal(%1, I64(1))
+      : (<null>, <null>) -> (<null>)
+      #scope: (Default/network-WithLossCell/_loss_fn-SPAUCILoss)
+      # In file c:/Users/Qianxiu/Desktop/mindspore_resnet50_husky_labrador-master/train.py:194/        if self.na == 1:/
+  %3([CNode]60) = Cond(%2, Bool(0))
+      : (<null>, <null>) -> (<null>)
+      #scope: (Default/network-WithLossCell/_loss_fn-SPAUCILoss)
+      # In file c:/Users/Qianxiu/Desktop/mindspore_resnet50_husky_labrador-master/train.py:194/        if self.na == 1:/
+  %4([CNode]61) = Switch(%3, call @__main___SPAUCILoss_construct.62, call @__main___SPAUCILoss_construct.63)
+      : (<null>, <null>, <null>) -> (<null>)
+      #scope: (Default/network-WithLossCell/_loss_fn-SPAUCILoss)
+      # In file c:/Users/Qianxiu/Desktop/mindspore_resnet50_husky_labrador-master/train.py:194/        if self.na == 1:/
+  %5([CNode]64) = %4()
+      #scope: (Default/network-WithLossCell/_loss_fn-SPAUCILoss)
+      # In file c:/Users/Qianxiu/Desktop/mindspore_resnet50_husky_labrador-master/train.py:194/        if self.na == 1:/
+  %6([CNode]66) = call @__main___SPAUCILoss_construct.65(%5)
+      : (<null>) -> (<null>)
+      #scope: (Default/network-WithLossCell)
+      # In file C:\Users\Qianxiu\anaconda3\lib\site-packages\mindspore\nn\wrap\cell_wrapper.py:123/        return self._loss_fn(out, label)/
+  Return(%6)
+      : (<null>)
+      #scope: (Default/network-WithLossCell/_loss_fn-SPAUCILoss)
+      # In file c:/Users/Qianxiu/Desktop/mindspore_resnet50_husky_labrador-master/train.py:194/        if self.na == 1:/
+}
+# Order:
+#   1: @__main___SPAUCILoss_construct.26:[CNode]67{[0]: ValueNode<DoSignaturePrimitive> S-Prim-negative, [1]: ValueNode<Int64Imm> 1}
+#   2: @__main___SPAUCILoss_construct.26:[CNode]68{[0]: ValueNode<DoSignaturePrimitive> S-Prim-MakeTuple, [1]: [CNode]67, [2]: ValueNode<Int64Imm> 1}
+#   3: @__main___SPAUCILoss_construct.26:[CNode]69{[0]: ValueNode<FuncGraph> reshape.70, [1]: target, [2]: [CNode]68}
+#   4: @__main___SPAUCILoss_construct.26:pred_p{[0]: ValueNode<DoSignaturePrimitive> S-Prim-mul, [1]: pred, [2]: [CNode]69}
+#   5: @__main___SPAUCILoss_construct.26:[CNode]71{[0]: ValueNode<DoSignaturePrimitive> S-Prim-sub, [1]: ValueNode<Int64Imm> 1, [2]: target}
+#   6: @__main___SPAUCILoss_construct.26:[CNode]72{[0]: ValueNode<DoSignaturePrimitive> S-Prim-negative, [1]: ValueNode<Int64Imm> 1}
+#   7: @__main___SPAUCILoss_construct.26:[CNode]73{[0]: ValueNode<DoSignaturePrimitive> S-Prim-MakeTuple, [1]: [CNode]72, [2]: ValueNode<Int64Imm> 1}
+#   8: @__main___SPAUCILoss_construct.26:[CNode]74{[0]: ValueNode<FuncGraph> reshape.70, [1]: [CNode]71, [2]: [CNode]73}
+#   9: @__main___SPAUCILoss_construct.26:pred_n{[0]: ValueNode<DoSignaturePrimitive> S-Prim-mul, [1]: pred, [2]: [CNode]74}
+#  10: @__main___SPAUCILoss_construct.26:[CNode]58{[0]: ValueNode<Primitive> resolve, [1]: ValueNode<NameSpace> ClassMember: 'Namespace:__main__..<SPAUCILoss::2792301993232>', [2]: ValueNode<Symbol> na}
+#  11: @__main___SPAUCILoss_construct.26:[CNode]59{[0]: ValueNode<DoSignaturePrimitive> S-Prim-equal, [1]: [CNode]58, [2]: ValueNode<Int64Imm> 1}
+#  12: @__main___SPAUCILoss_construct.26:[CNode]60{[0]: ValueNode<Primitive> Cond, [1]: [CNode]59, [2]: ValueNode<BoolImm> false}
+#  13: @__main___SPAUCILoss_construct.26:[CNode]61{[0]: ValueNode<Primitive> Switch, [1]: [CNode]60, [2]: ValueNode<FuncGraph> __main___SPAUCILoss_construct.62, [3]: ValueNode<FuncGraph> __main___SPAUCILoss_construct.63}
+#  14: @__main___SPAUCILoss_construct.26:[CNode]64{[0]: [CNode]61}
+#  15: @__main___SPAUCILoss_construct.26:[CNode]66{[0]: ValueNode<FuncGraph> __main___SPAUCILoss_construct.65, [1]: [CNode]64}
+#  16: @__main___SPAUCILoss_construct.26:[CNode]75{[0]: ValueNode<Primitive> Return, [1]: [CNode]66}
+
+
+#===============================================================================
+# num of function graphs in stack: 9

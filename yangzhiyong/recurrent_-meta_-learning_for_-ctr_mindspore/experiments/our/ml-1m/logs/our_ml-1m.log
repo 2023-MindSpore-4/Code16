@@ -1,0 +1,7 @@
+2023-10-13 20:24:08,129 INFO     feng       cw final test: loss:0.0; AUC:0.5
+2023-10-16 12:07:33,008 INFO     feng       cw final test: loss:0.0; AUC:0.5
+2023-10-16 12:07:39,535 INFO     feng       cw final test: loss:0.0; AUC:0.46292425599681497
+2023-10-16 12:07:44,468 INFO     feng       cw final test: loss:0.0; AUC:0.5
+2023-10-16 12:08:28,323 INFO     feng       wc final test: loss:0.0; AUC:0.4689196699585311
+2023-10-16 12:08:33,583 INFO     feng       cw final test: loss:0.0; AUC:0.542599781029163
+2023-10-16 12:08:37,397 INFO     feng       cw final test: loss:0.0; AUC:0.5

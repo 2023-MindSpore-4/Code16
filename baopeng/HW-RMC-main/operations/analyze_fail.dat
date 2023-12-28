@@ -1,0 +1,49 @@
+# 1.This file shows the parsed IR info when graph evaluating failed to help find the problem.
+# 2.You can search the last `------------------------>` to the node which is inferred failed.
+# 3.Refer to https://www.mindspore.cn/search?inputValue=analyze_fail.dat to get more instructions.
+# ===============================================================================
+
+# [No.1] construct.Default_wrapper.301
+# In file /disk1/CrowdContrib/user21/ss/OpsTester_Ascend/share/ops/primitive/sparse_slice_ops.py:19/    def construct(self, indices, values, shape, start, size):/
+funcgraph fg_301(
+        %para1 : Tensor(I64)[4096, 2]    # indices
+        , %para2 : Tensor(I64)[2048]    # values
+        , %para3 : Tensor(I64)[2]    # shape
+        , %para4 : Tensor(I64)[2]    # start
+        , %para5 : Tensor(I64)[3]    # size
+    ) {
+
+#------------------------> 0
+    %1 = FuncGraph::fg_302(%para1, %para2, %para3, %para4, %para5)    #(Tensor(I64)[4096, 2], Tensor(I64)[2048], Tensor(I64)[2], Tensor(I64)[2], Tensor(I64)[3])    # fg_302=construct.Default.302 #scope: Default
+#[CNode]303
+    Primitive::Return{prim_type=1}(%1)    #(Undefined) #scope: Default
+      # In file /disk1/CrowdContrib/user21/ss/OpsTester_Ascend/share/ops/primitive/sparse_slice_ops.py:20/        return self.sparse_slice(indices, values, shape, start, size)/#[CNode]304
+}
+# order:
+#   1: @construct.Default_wrapper.301:[CNode]303{[0]: ValueNode<FuncGraph> construct.Default.302, [1]: indices, [2]: values, [3]: shape, [4]: start, [5]: size}
+#   2: @construct.Default_wrapper.301:[CNode]304{[0]: ValueNode<Primitive> Return, [1]: [CNode]303}
+
+
+# [No.2] construct.Default.302
+# In file /disk1/CrowdContrib/user21/ss/OpsTester_Ascend/share/ops/primitive/sparse_slice_ops.py:19/    def construct(self, indices, values, shape, start, size):/
+funcgraph fg_302(
+        %para6 : Tensor(I64)[4096, 2]    # indices
+        , %para7 : Tensor(I64)[2048]    # values
+        , %para8 : Tensor(I64)[2]    # shape
+        , %para9 : Tensor(I64)[2]    # start
+        , %para10 : Tensor(I64)[3]    # size
+    ) {
+
+#------------------------> 1
+    %1 = DoSignaturePrimitive::S-Prim-SparseSlice{prim_type=1}[output_names=["y_indices", "y_values", "y_shape"], cust_aicpu="SparseSlice", input_names=["indices", "values", "shape", "start", "size"]](%para6, %para7, %para8, %para9, %para10)    #(Tensor(I64)[4096, 2], Tensor(I64)[2048], Tensor(I64)[2], Tensor(I64)[2], Tensor(I64)[3]) #scope: Default
+      # In file /disk1/CrowdContrib/user21/ss/OpsTester_Ascend/share/ops/primitive/sparse_slice_ops.py:20/        return self.sparse_slice(indices, values, shape, start, size)/#[CNode]305
+    Primitive::Return{prim_type=1}(%1)    #(Undefined) #scope: Default
+      # In file /disk1/CrowdContrib/user21/ss/OpsTester_Ascend/share/ops/primitive/sparse_slice_ops.py:20/        return self.sparse_slice(indices, values, shape, start, size)/#[CNode]306
+}
+# order:
+#   1: @construct.Default.302:[CNode]305{[0]: ValueNode<DoSignaturePrimitive> S-Prim-SparseSlice, [1]: indices, [2]: values, [3]: shape, [4]: start, [5]: size}
+#   2: @construct.Default.302:[CNode]306{[0]: ValueNode<Primitive> Return, [1]: [CNode]305}
+
+
+#===============================================================================
+# num of function graphs in stack: 2/3 (Ignored 1 internal frames).

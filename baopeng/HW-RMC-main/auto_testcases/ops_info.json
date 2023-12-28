@@ -1,0 +1,50 @@
+{
+    "ReduceSum": {
+        "attrs": {
+            "keep_dims1": {
+                "type": "str",
+                "value": ["a","b","c"]
+            },
+            "axis": {
+                "type": "axis"
+            },
+            "keep_dims2": {
+                "type": "bool"
+            },
+            "keep_dims3": {
+                "type": "float",
+                "value": [-9, 5]
+            },
+            "keep_dims4": {
+                "type": "int",
+                "value": [-9, 5]
+            },
+            "keep_dims5": {
+                "type": "list or tuple",
+                "value": [5, 0, 9]
+            }
+        },
+        "inputs": {
+            "input0": {
+                "shape": [0,7],
+                "dtype": ["int32","int64", "complex64", "complex128"],
+                "dynamic_inputs": 9
+            },
+            "input1": {
+                "shape": "axis_list_tuple"
+            },
+            "input2": {
+                "shape": [3,5],
+                "dtype": ["int32","int64", "complex64", "complex128"]
+            },
+            "input3": {
+                "shape": [0,7],
+                "dtype": ["int32","int64","complex64", "complex128"]
+            },
+            "input4": {
+                "shape": [0,0],
+                "dtype": ["int32","int64"]
+            }
+            }
+    }
+}

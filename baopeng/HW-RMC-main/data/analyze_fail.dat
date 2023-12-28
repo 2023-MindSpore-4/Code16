@@ -1,0 +1,137 @@
+# 1.This file shows the parsed IR info when graph evaluating failed to help find the problem.
+# 2.You can search the last `------------------------>` to the node which is inferred failed.
+# 3.Refer to https://www.mindspore.cn/search?inputValue=analyze_fail.dat to get more instructions.
+# ===============================================================================
+
+# [No.1] 185_construct_wrapper.128
+# In file /disk1/CrowdContrib/user21/ss/OpsTester_Ascend/share/grad.py:17/    def construct(self, *inputs):/
+funcgraph fg_128(
+        %para1 : Tensor(I64)[4096, 2]    # inputs0
+        , %para2 : Tensor(C128)[4096]    # inputs1
+        , %para3 : Tensor(I64)[2]    # inputs2
+        , %para4 : Tensor(I64)[2]    # inputs3
+        , %para5 : Tensor(I64)[2]    # inputs4
+    ) {
+    %1 : Tuple[Tuple[Tensor(I64),Tensor(C128),Tensor(I64)],Func]TupleShape(TupleShape({shape:(-1, 2)|min shape:(-1, 2)|max shape:(-1, 2)}, {shape:(-1)|min shape:(-1)|max shape:(-1)}, {shape:(-1)|min shape:(-1)|max shape:(-1)}), NoShape) = FuncGraph::fg_132(%para1, %para2, %para3, %para4, %para5)    #(Tensor(I64)[4096, 2], Tensor(C128)[4096], Tensor(I64)[2], Tensor(I64)[2], Tensor(I64)[2])    # fg_132=▸193_construct.132 #scope: Default
+      # In file /disk1/CrowdContrib/user21/ss/OpsTester_Ascend/share/grad.py:27/                return self.grad(self.network)(*inputs)/#133
+    %2 : FuncNoShape = Primitive::TupleGetItem{prim_type=1}(%1, I64(1))    #(Tuple[Tuple[Tensor(I64),Tensor(C128),Tensor(I64)],Func]TupleShape(TupleShape({shape:(-1, 2)|min shape:(-1, 2)|max shape:(-1, 2)}, {shape:(-1)|min shape:(-1)|max shape:(-1)}, {shape:(-1)|min shape:(-1)|max shape:(-1)}), NoShape), I64NoShape) #scope: Default
+      # In file /disk1/CrowdContrib/user21/ss/OpsTester_Ascend/share/grad.py:27/                return self.grad(self.network)(*inputs)/#133
+
+#------------------------> 0
+    %3 = %2((Tensor(35)[110, 2], Tensor(47)[110], Tensor(35)[2]))    #(Tuple[Tensor(I64),Tensor(C128),Tensor(I64)]TupleShape((110, 2), (110), (2))) #scope: Default
+      # In file /disk1/CrowdContrib/user21/ss/OpsTester_Ascend/share/grad.py:27/                return self.grad(self.network)(*inputs)/#133
+    %4 = Primitive::TupleGetItem{prim_type=1}(%3, I64(1))    #(Undefined, Undefined) #scope: Default
+#134
+    %5 = Primitive::TupleGetItem{prim_type=1}(%3, I64(2))    #(Undefined, Undefined) #scope: Default
+#135
+    %6 = Primitive::TupleGetItem{prim_type=1}(%3, I64(3))    #(Undefined, Undefined) #scope: Default
+#136
+    %7 = Primitive::TupleGetItem{prim_type=1}(%3, I64(4))    #(Undefined, Undefined) #scope: Default
+#137
+    %8 = Primitive::TupleGetItem{prim_type=1}(%3, I64(5))    #(Undefined, Undefined) #scope: Default
+#138
+    %9 = Primitive::MakeTuple{prim_type=1}(%4, %5, %6, %7, %8)    #(Undefined, Undefined, Undefined, Undefined, Undefined) #scope: Default
+#139
+    Primitive::Return{prim_type=1}(%9)    #(Undefined) #scope: Default
+      # In file /disk1/CrowdContrib/user21/ss/OpsTester_Ascend/share/grad.py:18/        if self.wrt_params:/#140
+}
+
+
+# [No.2] ◂193_construct.129
+# In file /disk1/CrowdContrib/user21/ss/OpsTester_Ascend/share/ops/primitive/sparse_slice_ops.py:19/    def construct(self, indices, values, shape, start, size):/
+funcgraph fg_129[fg_132](
+        %para6 : Tuple[Tensor(I64),Tensor(C128),Tensor(I64)]TupleShape((110, 2), (110), (2))    # [Parameter]130
+    ) {
+    %1 : EnvTypeNoShape = Primitive::EnvironCreate{prim_type=1}() #scope: Default
+#[CNode]141
+    %2 : $(▸193_construct.132):Tuple[Tuple[Tensor(I64),Tensor(C128),Tensor(I64)],Func]TupleShape(TupleShape({shape:(-1, 2)|min shape:(-1, 2)|max shape:(-1, 2)}, {shape:(-1)|min shape:(-1)|max shape:(-1)}, {shape:(-1)|min shape:(-1)|max shape:(-1)}), NoShape) = FuncGraph::fg_142(%para-1, %para-1, %para-1, %para-1, %para-1)    #(Tensor(I64)[4096, 2], Tensor(C128)[4096], Tensor(I64)[2], Tensor(I64)[2], Tensor(I64)[2])    # fg_142=▸SparseSlice.142 #scope: Default/network-SparseSlice
+      # In file /disk1/CrowdContrib/user21/ss/OpsTester_Ascend/share/ops/primitive/sparse_slice_ops.py:20/        return self.sparse_slice(indices, values, shape, start, size)/#▲[CNode]143
+    %3 : $(▸193_construct.132):FuncNoShape = Primitive::TupleGetItem{prim_type=1}(%2, I64(1))    #(Tuple[Tuple[Tensor(I64),Tensor(C128),Tensor(I64)],Func]TupleShape(TupleShape({shape:(-1, 2)|min shape:(-1, 2)|max shape:(-1, 2)}, {shape:(-1)|min shape:(-1)|max shape:(-1)}, {shape:(-1)|min shape:(-1)|max shape:(-1)}), NoShape), I64NoShape) #scope: Default/network-SparseSlice
+#[CNode]144
+
+#------------------------> 1
+    %4 = %3(%para6)    #(Tuple[Tensor(I64),Tensor(C128),Tensor(I64)]TupleShape((110, 2), (110), (2))) #scope: Default/network-SparseSlice
+#[CNode]145
+    %5 = Primitive::TupleGetItem{prim_type=1}(%4, I64(1))    #(Undefined, Undefined) #scope: Default/network-SparseSlice
+#[CNode]146
+    %6 = Primitive::RealInner{prim_type=1}(%5)    #(Undefined) #scope: Default/network-SparseSlice
+#[CNode]147
+    %7 = Primitive::TupleGetItem{prim_type=1}(%4, I64(2))    #(Undefined, Undefined) #scope: Default/network-SparseSlice
+#[CNode]148
+    %8 = Primitive::TupleGetItem{prim_type=1}(%4, I64(3))    #(Undefined, Undefined) #scope: Default/network-SparseSlice
+#[CNode]149
+    %9 = Primitive::RealInner{prim_type=1}(%8)    #(Undefined) #scope: Default/network-SparseSlice
+#[CNode]150
+    %10 = Primitive::TupleGetItem{prim_type=1}(%4, I64(4))    #(Undefined, Undefined) #scope: Default/network-SparseSlice
+#[CNode]151
+    %11 = Primitive::RealInner{prim_type=1}(%10)    #(Undefined) #scope: Default/network-SparseSlice
+#[CNode]152
+    %12 = Primitive::TupleGetItem{prim_type=1}(%4, I64(5))    #(Undefined, Undefined) #scope: Default/network-SparseSlice
+#[CNode]153
+    %13 = Primitive::RealInner{prim_type=1}(%12)    #(Undefined) #scope: Default/network-SparseSlice
+#[CNode]154
+    %14 = Primitive::MakeTuple{prim_type=1}(%1, %6, %7, %9, %11, %13)    #(EnvTypeNoShape, Undefined, Undefined, Undefined, Undefined, Undefined) #scope: Default
+#[CNode]155
+    Primitive::Return{prim_type=1}(%14)    #(Undefined) #scope: Default
+#[CNode]156
+}
+# order:
+#   1: @◂193_construct.129:[CNode]157{[0]: ValueNode<HyperMapPy> hyper_map[zeros_like_leaf].93, [1]: [CNode]158}
+#   2: @◂193_construct.129:[CNode]159{[0]: ValueNode<HyperMapPy> hyper_map[zeros_like_leaf].93, [1]: ValueNode<FuncGraph> ▸SparseSlice.142}
+#   3: @◂193_construct.129:[CNode]160{[0]: ValueNode<HyperMapPy> hyper_map[zeros_like_leaf].93, [1]: ▸size}
+#   4: @◂193_construct.129:[CNode]161{[0]: ValueNode<HyperMapPy> hyper_map[zeros_like_leaf].93, [1]: ▸start}
+#   5: @◂193_construct.129:[CNode]162{[0]: ValueNode<HyperMapPy> hyper_map[zeros_like_leaf].93, [1]: ▸shape}
+#   6: @◂193_construct.129:[CNode]163{[0]: ValueNode<HyperMapPy> hyper_map[zeros_like_leaf].93, [1]: ▸values}
+#   7: @◂193_construct.129:[CNode]164{[0]: ValueNode<HyperMapPy> hyper_map[zeros_like_leaf].93, [1]: ▸indices}
+#   8: @◂193_construct.129:[CNode]156{[0]: ValueNode<Primitive> Return, [1]: [CNode]155}
+
+
+# [No.3] ◂SparseSlice.131
+# In file /home/user21/.conda/envs/ss/lib/python3.7/site-packages/mindspore/ops/_grad_experimental/grad_sparse_ops.py:49/    def bprop(indices, values, shape, start, size, out, dout):/
+funcgraph fg_131[fg_142](
+        %para7 : Tuple[Tensor(I64),Tensor(C128),Tensor(I64)]TupleShape((110, 2), (110), (2))    # ▽out
+    ) {
+    %1 : EnvTypeNoShape = Primitive::EnvironCreate{prim_type=1}() #scope: Default/network-SparseSlice
+#165
+    %2 : Tuple[EnvType]TupleShape(NoShape) = Primitive::MakeTuple{prim_type=1}(%1)    #(EnvTypeNoShape) #scope: Default/network-SparseSlice
+#166
+    %3 : Tensor(I64)[4096, 2] = DoSignaturePrimitive::S-Prim-ZerosLike{prim_type=1}[output_names=["y"], input_names=["x"]](%para-1)    #(Tensor(I64)[4096, 2]) #scope: Gradients/Default/network-SparseSlice/gradSparseSlice
+      # In file /home/user21/.conda/envs/ss/lib/python3.7/site-packages/mindspore/ops/_grad_experimental/grad_sparse_ops.py:51/        return zeros_like(indices), grad_op, zeros_like(shape), zeros_like(start), zeros_like(size)/#[CNode]103
+    %4 : Tensor(C128)[110] = DoSignaturePrimitive::S-Prim-getitem{prim_type=1}(%para7, I64(1))    #(Tuple[Tensor(I64),Tensor(C128),Tensor(I64)]TupleShape((110, 2), (110), (2)), I64NoShape) #scope: Gradients/Default/network-SparseSlice/gradSparseSlice
+      # In file /home/user21/.conda/envs/ss/lib/python3.7/site-packages/mindspore/ops/_grad_experimental/grad_sparse_ops.py:50/        grad_op = sparse_slice_grad(dout[1], indices, start, out[0])/#[CNode]104
+    %5 : $(▸SparseSlice.142):Tuple[Tensor(I64),Tensor(C128),Tensor(I64)]TupleShape({shape:(-1, 2)|min shape:(-1, 2)|max shape:(-1, 2)}, {shape:(-1)|min shape:(-1)|max shape:(-1)}, {shape:(-1)|min shape:(-1)|max shape:(-1)}) = PrimitivePy::SparseSlice{prim_type=1}[output_names=["y_indices", "y_values", "y_shape"], cust_aicpu="SparseSlice", input_names=["indices", "values", "shape", "start", "size"]](%para-1, %para-1, %para-1, %para-1, %para-1)    #(Tensor(I64)[4096, 2], Tensor(C128)[4096], Tensor(I64)[2], Tensor(I64)[2], Tensor(I64)[2]) #scope: Default/network-SparseSlice
+      # In file /disk1/CrowdContrib/user21/ss/OpsTester_Ascend/share/ops/primitive/sparse_slice_ops.py:20/        return self.sparse_slice(indices, values, shape, start, size)/#equiv[CNode]143
+    %6 : Tensor(I64)[-1_-1^-1, 2] = DoSignaturePrimitive::S-Prim-getitem{prim_type=1}(%5, I64(0))    #(Tuple[Tensor(I64),Tensor(C128),Tensor(I64)]TupleShape({shape:(-1, 2)|min shape:(-1, 2)|max shape:(-1, 2)}, {shape:(-1)|min shape:(-1)|max shape:(-1)}, {shape:(-1)|min shape:(-1)|max shape:(-1)}), I64NoShape) #scope: Gradients/Default/network-SparseSlice/gradSparseSlice
+      # In file /home/user21/.conda/envs/ss/lib/python3.7/site-packages/mindspore/ops/_grad_experimental/grad_sparse_ops.py:50/        grad_op = sparse_slice_grad(dout[1], indices, start, out[0])/#[CNode]105
+
+#------------------------> 2
+    %7 = DoSignaturePrimitive::S-Prim-SparseSliceGrad{prim_type=1}[output_names=["y_grad"], cust_aicpu="SparseSliceGrad", input_names=["backprop_val_grad", "indices", "start", "new_indices"]](%4, %para-1, %para-1, %6)    #(Tensor(C128)[110], Tensor(I64)[4096, 2], Tensor(I64)[2], Tensor(I64)[-1_-1^-1, 2]) #scope: Gradients/Default/network-SparseSlice/gradSparseSlice
+      # In file /home/user21/.conda/envs/ss/lib/python3.7/site-packages/mindspore/ops/_grad_experimental/grad_sparse_ops.py:50/        grad_op = sparse_slice_grad(dout[1], indices, start, out[0])/#grad_op
+    %8 = DoSignaturePrimitive::S-Prim-ZerosLike{prim_type=1}[output_names=["y"], input_names=["x"]](%para-1)    #(Tensor(I64)[2]) #scope: Gradients/Default/network-SparseSlice/gradSparseSlice
+      # In file /home/user21/.conda/envs/ss/lib/python3.7/site-packages/mindspore/ops/_grad_experimental/grad_sparse_ops.py:51/        return zeros_like(indices), grad_op, zeros_like(shape), zeros_like(start), zeros_like(size)/#[CNode]106
+    %9 = DoSignaturePrimitive::S-Prim-ZerosLike{prim_type=1}[output_names=["y"], input_names=["x"]](%para-1)    #(Tensor(I64)[2]) #scope: Gradients/Default/network-SparseSlice/gradSparseSlice
+      # In file /home/user21/.conda/envs/ss/lib/python3.7/site-packages/mindspore/ops/_grad_experimental/grad_sparse_ops.py:51/        return zeros_like(indices), grad_op, zeros_like(shape), zeros_like(start), zeros_like(size)/#[CNode]107
+    %10 = DoSignaturePrimitive::S-Prim-ZerosLike{prim_type=1}[output_names=["y"], input_names=["x"]](%para-1)    #(Tensor(I64)[2]) #scope: Gradients/Default/network-SparseSlice/gradSparseSlice
+      # In file /home/user21/.conda/envs/ss/lib/python3.7/site-packages/mindspore/ops/_grad_experimental/grad_sparse_ops.py:51/        return zeros_like(indices), grad_op, zeros_like(shape), zeros_like(start), zeros_like(size)/#[CNode]108
+    %11 = DoSignaturePrimitive::S-Prim-MakeTuple{prim_type=1}(%3, %7, %8, %9, %10)    #(Tensor(I64)[4096, 2], Undefined, Undefined, Undefined, Undefined) #scope: Gradients/Default/network-SparseSlice/gradSparseSlice
+      # In file /home/user21/.conda/envs/ss/lib/python3.7/site-packages/mindspore/ops/_grad_experimental/grad_sparse_ops.py:51/        return zeros_like(indices), grad_op, zeros_like(shape), zeros_like(start), zeros_like(size)/#[CNode]109
+    %12 = TupleAdd::tuple_add(%2, %11)    #(Tuple[EnvType]TupleShape(NoShape), Undefined) #scope: Default/network-SparseSlice
+#167
+    Primitive::Return{prim_type=1}(%12)    #(Undefined) #scope: Gradients/Default/network-SparseSlice/gradSparseSlice
+      # In file /home/user21/.conda/envs/ss/lib/python3.7/site-packages/mindspore/ops/_grad_experimental/grad_sparse_ops.py:51/        return zeros_like(indices), grad_op, zeros_like(shape), zeros_like(start), zeros_like(size)/#[CNode]111
+}
+# order:
+#   1: @SparseSlice.112:[CNode]113{[0]: ValueNode<Primitive> resolve, [1]: ValueNode<NameSpace> CommonOPS: 'Namespace:mindspore._extends.parse.trope', [2]: ValueNode<Symbol> MakeTuple}
+#   2: @SparseSlice.112:[CNode]114{[0]: [CNode]113, [1]: [CNode]104, [2]: indices, [3]: start, [4]: [CNode]105}
+#   3: @SparseSlice.112:[CNode]115{[0]: ValueNode<Primitive> resolve, [1]: ValueNode<NameSpace> CommonOPS: 'Namespace:mindspore._extends.parse.trope', [2]: ValueNode<Symbol> MakeTuple}
+#   4: @SparseSlice.112:[CNode]116{[0]: [CNode]115, [1]: indices}
+#   5: @SparseSlice.112:[CNode]117{[0]: ValueNode<Primitive> resolve, [1]: ValueNode<NameSpace> CommonOPS: 'Namespace:mindspore._extends.parse.trope', [2]: ValueNode<Symbol> MakeTuple}
+#   6: @SparseSlice.112:[CNode]118{[0]: [CNode]117, [1]: shape}
+#   7: @SparseSlice.112:[CNode]119{[0]: ValueNode<Primitive> resolve, [1]: ValueNode<NameSpace> CommonOPS: 'Namespace:mindspore._extends.parse.trope', [2]: ValueNode<Symbol> MakeTuple}
+#   8: @SparseSlice.112:[CNode]120{[0]: [CNode]119, [1]: start}
+#   9: @SparseSlice.112:[CNode]121{[0]: ValueNode<Primitive> resolve, [1]: ValueNode<NameSpace> CommonOPS: 'Namespace:mindspore._extends.parse.trope', [2]: ValueNode<Symbol> MakeTuple}
+#  10: @SparseSlice.112:[CNode]122{[0]: [CNode]121, [1]: size}
+
+
+#===============================================================================
+# num of function graphs in stack: 3/4 (Ignored 1 internal frames).
